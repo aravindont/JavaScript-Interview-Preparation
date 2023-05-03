@@ -69,4 +69,44 @@
 
 // console.log(arr);
 
-// Polyfills in JS
+//************************************************
+//Prototypes in JS
+
+// const myObject = {
+//   city: "Bengaluru",
+//   geet() {
+//     console.log(`${this.city}`);
+//   },
+// };
+
+// myObject.geet();
+// Object.getPrototypeOf(myObject); // Object { }
+
+// const arr = [1, true, "aravind"];
+
+// const myObject = {
+//   score: 12,
+//   playesScoreUpdate() {
+//     console.log(score + 1);
+//   },
+// };
+
+// Object.prototype.aravind = function () {
+//   console.log("hey aravind");
+// };
+
+// myObject.aravind();
+
+// I want to define the heyArray method that gives the output as “total elements are ##” on any array that we access it on
+
+const arr1 = [1, 2, 3, 4];
+console.log(arr1.length);
+Array.prototype.heyArray = function () {
+  let count = 0;
+  for (let i = 0; i < this.length; i++) {
+    count++;
+  }
+  console.log(count);
+};
+
+arr1.heyArray();
