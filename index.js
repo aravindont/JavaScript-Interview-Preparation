@@ -99,14 +99,130 @@
 
 // I want to define the heyArray method that gives the output as “total elements are ##” on any array that we access it on
 
-const arr1 = [1, 2, 3, 4];
-console.log(arr1.length);
-Array.prototype.heyArray = function () {
-  let count = 0;
-  for (let i = 0; i < this.length; i++) {
-    count++;
-  }
-  console.log(count);
-};
+// const arr1 = [1, 2, 3, 4];
+// console.log(arr1.length);
+// Array.prototype.heyArray = function () {
+//   let count = 0;
+//   for (let i = 0; i < this.length; i++) {
+//     count++;
+//   }
+//   console.log(count);
+// };
 
-arr1.heyArray();
+// arr1.heyArray();
+
+// Prototypal inheritance
+
+// const User = {
+//   name: "top name",
+//   email: "example@gmail.com",
+// };
+
+// const Teacher = {
+//   makesVideos: true,
+// };
+
+// const TeachingSupport = {
+//   isAvailable: false,
+// };
+//Teacher.__proto__ = User;
+
+// Teacher.prototype = User;
+
+// Object.setPrototypeOf(Teacher, User);
+// Object.setPrototypeOf(TeachingSupport, Teacher);
+
+// implement trueLength() function that gives length of the string by eleminating spaces
+
+// String.prototype.trueLength = function () {
+//   console.log(`true length is ${this.trim().length}`);
+// };
+
+// "aravind  ".trueLength();
+
+//*****************
+
+/**Hoisting in JavaScript '
+ * JavaScript Engine Executes program in two phases first is the memory creation phase and second is the execution phase
+ */
+// console.log(playerScore);
+// var playerScore = 10;
+
+// console.log(win, howManyTimes);
+// let win = true;
+// const howManyTimes = 2;
+
+// updateScore();
+// function updateScore() {
+//   let score = 2;
+//   score = score + 1;
+//   console.log(score);
+// }
+
+/**Memoization in JavaScript
+ * Memoization is the way to reduce the number of expensive calculations by caching the results somewhere using database tecniques like redis cache
+ * so that when we call the function with same arguments or when we visit the same website again we can retrieve the results from the cache
+ * In the below example i used simple JavaScript Object to create the cache
+ */
+
+// let cache = {};
+// function memo(num) {
+//   if (cache[num]) {
+//     console.log("cache");
+//     return cache[num];
+//   } else {
+//     const result = sum(num);
+//     cache[num] = result;
+//     console.log("no cache");
+//     return result;
+//   }
+// }
+
+// function sum(num) {
+//   const increment = 10;
+//   const updatedScore = increment + num;
+//   return updatedScore;
+// }
+// const playerScore = 10;
+
+// console.log(memo(playerScore));
+// console.log(memo(playerScore));
+// console.log(memo(playerScore));
+
+// let cache = {};
+
+// function calculateExpensiveValue(inputValue) {
+//   if (cache[inputValue]) {
+//     console.log("cache hit");
+//     return cache[inputValue];
+//   } else {
+//     console.log("cache miss");
+//     const result = expensiveCalculation(inputValue);
+//     cache[inputValue] = result;
+//     return result;
+//   }
+// }
+
+// function expensiveCalculation(input) {
+//   console.log("performing expensive calculation");
+//   return input * 2;
+// }
+
+// console.log(calculateExpensiveValue(5));
+// console.log(calculateExpensiveValue(5));
+// console.log(calculateExpensiveValue(10));
+// console.log(calculateExpensiveValue(10));
+
+// let arr1 = [1, 3, 4, 5];
+
+// const mapResult = arr1
+//   .map((element) => element + 2)
+//   .filter((element) => element > 3);
+// console.log(mapResult);
+
+// const forEachResult = arr1.forEach((ele) => {
+//   if (ele % 2 == 0) {
+//     arr1.pop();
+//   }
+// });
+// console.log(arr1);
